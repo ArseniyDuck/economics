@@ -1,0 +1,753 @@
+/* Reset ------------------------------------------------------------------------------------------------------------*/
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary, time, mark, audio, video, select, input {margin: 0;padding: 0;border: 0;font-size: 100%;vertical-align: baseline;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {display: block;}
+body {line-height: 1.2;}
+ol {padding-left: 1.4em;list-style: decimal;}
+ul {padding-left: 1.4em;list-style: square;}
+table {border-collapse: collapse;border-spacing: 0;}
+
+/* Variables ------------------------------------------------------------------------------------------------------------*/
+// color
+$purple: #9900CF;
+$red: #F44336;
+$red-transparent: rgba(244, 67, 54, 0.54);
+$darken-red: #993636;
+$light-grey: #6F7781;
+$blue-grey: #566475;
+$darken-blue-grey: #4E5762;
+$grey: #3E4249;
+$darken-grey: #22252A;
+
+// transition
+$hoverTransition: all 0.12s linear;
+$movingTransition: all 0.2s linear;
+
+// mixin
+$maxWidth: 1536;
+
+@mixin adaptiveFont($pcSize, $mobileSize) {
+    $addSize: $pcSize - $mobileSize;;
+    $addMobileSize: $addSize + $addSize * 0.7;
+    @media (max-width: 767px) {
+        font-size: calc(#{$mobileSize + px} + #{$addMobileSize} * ((100vw - 320px) / #{$maxWidth}));}
+    @media (min-width: 767px) {
+        font-size: calc(#{$mobileSize + px} + #{$addSize} * (100vw / #{$maxWidth}));}
+    @media (min-width: 1280px) {
+        font-size: $pcSize + px;}}
+
+// font
+$font-family: 'Roboto', sans-serif;
+$light-text: #E2E2E2;
+body {
+    font-family: $font-family;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;}
+
+/* Default ---------------------------------------------------------------------------------------------------------------*/
+body, html {height: 100%;}
+.container {width: 90%; margin: 0 auto; max-width: 1400px;}
+a {text-decoration: none; display: inline-block;}
+* {&:focus, &:active {outline: none;}}
+button {border: none; display: inline-block; padding: 0; background: transparent; cursor: pointer;}
+input {box-shadow: none; display: inline-block; border: none;}
+textarea {resize: none;}
+ul {list-style-type: none; padding: 0;}
+h1,h2,h3,h4,h5,h6 {font-weight: 400; padding: 0; margin: 0;}
+img {display: inline-block;}
+::selection {
+    color: #fff;
+    background: rgba(153, 0, 207, .4);}
+
+.wrapper {
+    height: 100vh;
+    border-right: 1.5px solid #454545;
+    background: $darken-grey;}
+
+/* Styles ---------------------------------------------------------------------------------------------------------------*/
+.tabs {
+    display: flex;
+    user-select: none;
+    height: 35px;
+    background: $grey;
+
+    &.overflown {
+        height: 55px;
+        overflow: auto;
+        overflow-y: hidden;}
+
+    &.overflown ~ .windows {
+        height: calc(100vh - 55px);}
+
+    &::-webkit-scrollbar {
+        height: 15px;}
+    
+    &::-webkit-scrollbar-track {
+        background: $light-grey;}
+     
+    &::-webkit-scrollbar-thumb {
+        border: 1.5px solid #6f7781;
+        border-radius: 10px;
+        background: $grey;}
+
+    &::-webkit-scrollbar-thumb:active {
+        background: #31343a;}}
+
+.tabs__item {
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 15px;
+    height: 35px;
+    min-width: 180px;
+    background: $light-grey;
+    transition: $hoverTransition;
+
+    & + & {
+        margin-left: 2px;}
+
+    &.active {
+        height: 40px;
+        border-radius: 0 0 5px 5px;
+        background: $blue-grey;
+        transition: $hoverTransition;
+        
+        .tabs__name {
+            font-size: 17.5px;}}}
+
+.tabs__name {
+    font-size: 16px;
+    font-weight: 400;}
+
+.tabs__item_first {
+
+    .tabs__name {
+        font-size: 17px;
+        margin-left: 5px;}}
+
+.close-sm,
+.close-lg  {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    background: transparent;
+
+    &::before,
+    &::after {
+        position: absolute;
+        content: "";
+        background: $darken-red;
+        transition: $hoverTransition;}
+
+    &::before {
+        transform: rotate(45deg);}
+
+    &::after {
+        transform: rotate(135deg);}
+    
+    &:hover {
+        &::before,
+        &::after {
+            background: $red;
+            transition: $hoverTransition;}
+        
+        &::before {
+            transform: rotate(135deg);}
+    
+        &::after {
+            transform: rotate(225deg);}}}
+
+.close-sm {
+    margin-left: auto;
+    width: 18px;
+    height: 18px;
+
+    &::before,
+    &::after {
+        width: 23px;
+        height: 2px;
+        left: -3px;
+        top: 8px;}}
+
+.close-lg {
+    width: 24px;
+    height: 24px;
+    margin-left: 15px;
+
+    &::before,
+    &::after {
+        width: 31.3px;
+        height: 2.8px;
+        left: -3px;
+        top: 10px;}
+
+    @media (max-width: 650px) {
+        margin-left: 10px;
+
+        &::before,
+        &::after {
+            width: 26.3px;
+            height: 2.8px;
+            left: -4px;}}}
+
+.windows {
+    //
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    //
+    height: calc(100vh - 40px);
+    background: transparent;}
+
+.windows__item {
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 8px 8px 10px #1F2022;
+    background: $grey;}
+
+
+// -------------------------------------- Get Stats Form --------------------------------------
+.getform {
+    display: none;
+    padding: 15px 50px 20px 50px;
+    text-align: center;
+
+    @media (max-width: 900px) {
+        padding: 10px 45px 15px 45px;}
+
+    @media (max-width: 650px) {
+        padding: 7px 35px 12px 35px;
+        
+        .getform__hide {
+            right: 17px;
+            top: 14px;}}
+
+    @media (max-width: 500px) {
+        padding: 6px 30px 11px 30px;
+
+        .getform__hide {
+            width: 30px;
+            height: 4px;}}}
+
+.getform__hide,
+.hide {
+    display: inline-block;
+    width: 34px;
+    height: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    background: $light-grey;
+    transition: $hoverTransition;
+
+    &:hover {
+        background: $blue-grey;
+        transition: $hoverTransition;}}
+
+.getform__hide {
+    position: absolute;
+    right: 20px;
+    top: 17px;}
+
+.getform__heading {
+    margin-bottom: 20px;
+    font-size: 37px;
+    text-align: center;
+
+    @media (max-width: 900px) {
+        margin-bottom: 15px;
+        font-size: 30px;}
+    
+    @media (max-width: 650px) {
+        margin-bottom: 10px;
+        font-size: 25px;}
+    
+    @media (max-width: 900px) {
+        margin-bottom: 8px;
+        font-size: 23px;}}
+
+.getform__field {
+    display: flex;
+
+    & + & {
+        margin-top: 12px;
+        
+        @media (max-width: 900px) {
+            margin-top: 8px;}}}
+
+.getform__label {
+    margin-right: 20px;
+    font-size: 25px;
+    font-weight: 400;
+
+    @media (max-width: 900px) {
+        margin-right: 15px;
+        font-size: 21px;}
+
+    @media (max-width: 650px) {
+        margin-right: 10px;
+        font-size: 17px;}
+    
+    @media (max-width: 500px) {
+        display: none;}}
+
+.windows__select,
+.getform__input,
+.windows__field-value {
+    box-sizing: border-box;
+    padding: 5px;
+    margin-left: auto;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 400;
+    color: $light-text;
+    background: $light-grey;}
+
+.windows__select,
+.getform__input {
+    width: 360px;
+
+    @media (max-width: 900px) {
+        width: 300px;
+        font-size: 15px;}
+
+    @media (max-width: 650px) {
+        width: 260px;
+        font-size: 14px;}
+    
+    @media (max-width: 500px) {
+        width: 300px;}}
+
+@media (max-width: 650px) {
+    .windows__select.windows__select_getform {
+        background-position-y: 10px;}}
+
+.windows__select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("../images/arrow.svg");
+    background-repeat: no-repeat;
+    background-position-x: 97%;
+    background-position-y: 11px;
+
+    &.windows__select_detaildata {
+        width: 78px;
+        font-size: 16px;
+        background-position-y: 10px;
+        background-position-x: 90%;
+        
+        @media (max-width: 900px) {
+            width: 70px;
+            font-size: 14px;
+            background-position-y: 9.5px;}}
+
+    &.windows__select_detaildata.windows__select_data-for-graph {
+        width: 90px;
+        
+        @media (max-width: 900px) {
+            width: 80px;}}}
+
+.getform__input {
+    padding-left: 10px;}
+
+.button {
+    display: inline-block;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 22.5px;
+    font-weight: 500;
+    color: #fff;
+    background: $purple;
+    transition: $hoverTransition;
+
+    &:hover {
+        box-shadow: 0 0 20px $purple;
+        transition: $hoverTransition;}}
+
+.getform__button {
+    padding: 5px 100px;
+
+    @media (max-width: 900px) {
+        padding: 3.5px 60px;
+        margin-top: 15px;
+        font-size: 19px;}
+
+    @media (max-width: 650px) {
+        padding: 3.5px 50px;
+        margin-top: 13px;
+        font-size: 17px;}}
+
+
+// -------------------------------------- Main Data --------------------------------------
+.maindata, .calcdata {
+    display: none;
+    width: 800px;
+
+    @media (max-width: 900px) {
+        width: 725px;}
+    
+    @media (max-width: 800px) {
+        width: 525px;
+        
+        .windows__data {
+            flex-direction: column;
+            max-height: 500px;
+            overflow: auto;
+
+            &::-webkit-scrollbar {
+                width: 12.5px;}
+            
+            &::-webkit-scrollbar-track {
+                background: $light-grey;}
+             
+            &::-webkit-scrollbar-thumb {
+                border: 1.5px solid #6f7781;
+                border-radius: 10px;
+                background: $grey;}
+        
+            &::-webkit-scrollbar-thumb:active {
+                background: #31343a;}
+            
+            .windows__left,
+            .windows__right {
+                box-sizing: border-box;
+                padding: 0 5px;
+                width: 100%;}
+            
+            .windows__right {
+                margin-top: 20px;}}}
+
+    @media (max-width: 650px) {
+        width: 400px;}
+    
+    @media (max-width: 450px) {
+        width: 350px;}}
+
+.windows__header {
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    margin-bottom: 12.5px;
+    border-bottom: 1px solid $purple;
+
+    @media (max-width: 900px) {
+        padding-bottom: 8px;
+        margin-bottom: 10px;}}
+
+.windows__heading {
+    font-size: 22px;
+    font-weight: 700;
+    
+    @media (max-width: 900px) {
+        font-size: 19px;}}
+
+.hide {
+    margin-left: auto;
+
+    @media (max-width: 650px) {
+        width: 30px;
+        height: 4px;}}
+
+.windows__data {
+    display: flex;}
+
+.windows__left,
+.windows__right {
+    padding: 0 5px;
+    width: 50%;}
+
+.maindata__sidename {
+    margin-bottom: 10px;
+    font-size: 21px;
+    font-weight: 500;
+
+    @media (max-width: 900px) {
+        margin-bottom: 8px;
+        font-size: 18px;}
+    
+    @media (max-width: 800px) {
+        font-size: 20px;}}
+
+.windows__field {
+    display: flex;
+    align-items: center;
+    padding: 0 10px 0 20px;
+
+    & + & {
+        margin-top: 15px;}
+
+    @media (max-width: 800px) {
+        & + & {
+            margin-top: 10px;}}
+    
+    &.windows__field_calcdata {
+        padding: 0 20px 0 0;}}
+
+.windows__fieldname {
+    max-width: 47%;
+    font-size: 18px;
+    font-weight: 400;
+    color: #f0f0f0;
+
+    &.windows__fieldname_calcdata {
+        max-width: 57%;}
+    
+    @media (max-width: 900px) {
+        max-width: 51%;
+        font-size: 17px;}
+
+    @media (max-width: 800px) {
+        max-width: 60%;}
+
+    @media (max-width: 650px) {
+        max-width: 49%;}}
+
+.windows__field-value {
+    width: 90px;
+    font-size: 18px;
+    text-align: center;
+
+    -moz-appearance: textfield;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;}
+    
+    &.windows__field-value_detaildata {
+        width: 30px;
+        padding: 3px;
+        margin-left: auto;
+        font-size: 16px;
+        
+        @media (max-width: 900px) {
+            width: 25px;
+            font-size: 15px;}}
+
+    @media (max-width: 900px) {
+        width: 65px;
+        font-size: 14px;}}
+
+.windows__unit {
+    margin-left: 3px;
+    font-size: 18px;
+    font-weight: 400;   
+    color: #f0f0f0;
+
+    @media (max-width: 900px) {
+        font-size: 16px;}}
+
+.maindata__detail {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    margin-left: 10px;
+    border-radius: 4px;
+    background: #4E5762;
+    transition: $hoverTransition;
+
+    &:hover {
+        background: $blue-grey;
+        transition: $hoverTransition;}}
+
+.maindata__footer {
+    display: flex;
+    justify-content: flex-end;}
+
+.maindata__button {
+    padding: 5px 50px;
+
+    @media (max-width: 900px) {
+        padding: 5px 40px;
+        font-size: 19px;}}
+
+
+// -------------------------------------- Calculated Data --------------------------------------
+.maindata {
+    // display: block;
+}
+.calcdata {
+    // display: block;
+}
+
+
+// -------------------------------------- Detail Data --------------------------------------
+.detaildata {
+    // display: none;
+    width: 800px;
+
+    @media (max-width: 900px) {
+        width: 650px;}
+
+    @media (max-width: 750px) {
+        width: 550px;}
+
+    @media (max-width: 650px) {
+        width: 450px;}
+
+    .windows__data {
+        margin-top: 20px;}
+
+    .windows__header {
+        margin-bottom: 15px;}}
+
+@media (max-width: 750px) {
+    .detaildata__parameter {
+        width: 40%;}}
+
+@media (max-width: 650px) {
+    .detaildata__parameter {
+        width: 49%;}}
+
+@media (max-width: 650px) {
+    .detaildata .windows__header .windows__heading {
+        font-size: 17.5px;}}
+
+.detaildata__parameters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 10px;
+    margin-top: 5px;}
+
+.detaildata__table {
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;}
+
+.detaildata__row {
+    background: $darken-blue-grey;
+
+    &:nth-child(2n) {
+        background: $light-grey;}
+
+    td {
+        padding: 7.5px 10px;
+        box-sizing: border-box;
+        border-right: 1px solid #3E4249;
+        font-size: 17px;
+        font-weight: 400;
+        text-align: center;
+        
+        @media (max-width: 900px) {
+            padding: 5px 7.5px;
+            font-size: 15px;}
+
+        @media (max-width: 750px) {
+            padding: 4px 6px;
+            font-size: 14px;}}}
+
+.detaildata__heading {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 500;
+
+    @media (max-width: 900px) {
+        margin-top: 15px;
+        font-size: 17.5px;}
+
+    @media (max-width: 750px) {
+        margin-top: 12px;
+        font-size: 16.5px;}}
+
+.detaildata__field {
+    display: flex;
+    align-items: center;
+
+    label {
+        margin-right: 10px;
+        font-size: 19px;
+        font-weight: 400;
+        color: $light-text;
+        
+        @media (max-width: 900px) {
+            margin-right: 7.5px;
+            font-size: 17px;}
+        
+        @media (max-width: 750px) {
+            margin-right: 5.5px;
+            font-size: 16px;}}
+
+    & + & {
+        margin-top: 7.5px;}}
+
+.detaildata__tabs {
+    display: flex;
+    width: calc(100% - 124.5px);
+    height: 28.2px;
+    margin-right: 20px;
+
+    @media (max-width: 900px) {
+        width: calc(100% - 100.888px);
+        height: 24.8px;
+        margin-right: 15px;}}
+
+.detaildata__tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    cursor: default;
+    font-size: 18px;
+    font-weight: 400;
+    color: $light-text;
+    background: $darken-blue-grey;
+
+    @media (max-width: 900px) {
+        font-size: 15px;}
+
+    @media (max-width: 650px) {
+        font-size: 12px;}
+
+    &:nth-child(1) {
+        border-radius: 5px 0 0 5px;}
+    
+    &:nth-child(5) {
+        border-radius: 0 5px 5px 0;}
+
+    &:nth-child(1).active {
+        border-radius: 5px 5px 0 5px;}
+
+    &:nth-child(5).active {
+        border-radius: 5px 5px 5px 0;}
+
+    & + & {
+        border-left: 1px solid $grey;}
+
+    &.active {
+        align-self: flex-end;
+        border-radius: 5px 5px 0 0;
+        height: 33.2px;
+        background: $blue-grey;}}
+
+@media (max-width: 900px) {
+    .detaildata__tab.active {
+        height: 29.2px;}}
+
+.detaildata__button {
+    padding: 2.5px 30px;
+    margin-top: 0;
+    font-size: 20px;
+
+    @media (max-width: 900px) {
+        padding: 2.5px 25px;
+        font-size: 17px;}}
+
+.detaildata__graph {
+    height: 325px;
+    box-sizing: border-box;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background: $darken-blue-grey;
+
+    @media (max-width: 900px) {
+        height: 375px;}}

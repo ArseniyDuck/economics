@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="images/chartjs-logo.svg">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Economics</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="tabs">
+            <div class="tabs__item tabs__item_first active">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top: -1px;">
+                    <path class="svg-path" d="M19.75 21.5H15.25C14.5595 21.5 14 20.9405 14 20.25V15.75C14 15.1975 13.5525 14.75 13 14.75H11C10.4475 14.75 10 15.1975 10 15.75V20.25C10 20.9405 9.4405 21.5 8.75 21.5H4.25C3.5595 21.5 3 20.9405 3 20.25V10.7065C3 9.557 3.527 8.471 4.4295 7.76L11.5355 2.1605C11.808 1.9465 12.192 1.9465 12.464 2.1605L19.571 7.76C20.4735 8.471 21 9.5565 21 10.7055V20.25C21 20.9405 20.4405 21.5 19.75 21.5Z" fill="white"/>
+                </svg>
+                <span class="tabs__name">Get stats form</span>
+            </div>
+            <div class="tabs__item">
+                <span class="tabs__name">Detailed work...</span>
+                <div class="close-sm"></div>
+            </div>
+            <div class="tabs__item">
+                <span class="tabs__name">VKO stats</span>
+                <div class="close-sm"></div>
+            </div>
+        </header>
+        <main class="windows">
+            <form class="windows__item getform" id="getform" method="GET">
+                <span class="getform__hide"></span>
+                <p class="getform__heading">Get statistics</p>
+                <div class="getform__field">
+                    <label for="getform__region" class="getform__label getform__region-label">Select region: </label>
+                    <select name="region_name" class="windows__select windows__select_getform" id="getform__select">
+                        <option value="1">Region 1</option>
+                        <option value="1">Region 2</option>
+                        <option value="1">Region 3</option>
+                        <option value="1">Region 4</option>
+                    </select>
+                </div>
+                <div class="getform__field">
+                    <label for="getform__year" class="getform__label getform__year-label">Select year: </label>
+                    <input type="number" name="year" class="getform__input" id="getform__year" value="2021">
+                </div>
+                <button type="submit" class="button getform__button">Show data</button>
+            </form>
+            <div class="windows__item maindata">
+                <header class="windows__header">
+                    <h2 class="windows__heading">Statistics of the East Kazakhstan for 2021</h2>
+                    <span class="hide"></span>
+                    <div class="close-lg"></div>
+                </header>
+                <div class="windows__data">
+                    <div class="windows__left">
+                        <h3 class="maindata__sidename">Factors</h3>
+                        <div class="windows__field">
+                            <p class="windows__fieldname">Lorem, ipsum dolor</p>
+                            <input type="number" class="windows__field-value" value="135.89">
+                            <span class="windows__unit">u.m.</span>
+                            <button class="maindata__detail">
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.5 0C3.80166 0 0 3.80199 0 8.5C0 13.1983 3.80199 17 8.5 17C13.1983 17 17 13.198 17 8.5C17 3.80166 13.198 0 8.5 0ZM8.5 15.6719C4.53578 15.6719 1.32812 12.464 1.32812 8.5C1.32812 4.53578 4.53605 1.32812 8.5 1.32812C12.4642 1.32812 15.6719 4.53605 15.6719 8.5C15.6719 12.4642 12.4639 15.6719 8.5 15.6719Z" fill="#DBDBDB"/>
+                                    <path d="M8.5 8C8.13324 8 7.83594 8.25043 7.83594 8.55937V12.1615C7.83594 12.4705 8.13324 12.7209 8.5 12.7209C8.86676 12.7209 9.16406 12.4704 9.16406 12.1615V8.55937C9.16406 8.25043 8.86676 8 8.5 8Z" fill="#DBDBDB"/>
+                                    <path d="M8.5 6.30328C8.99511 6.30328 9.39648 5.90191 9.39648 5.4068C9.39648 4.91168 8.99511 4.51031 8.5 4.51031C8.00489 4.51031 7.60352 4.91168 7.60352 5.4068C7.60352 5.90191 8.00489 6.30328 8.5 6.30328Z" fill="#DBDBDB"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="windows__field">
+                            <p class="windows__fieldname">Lorem, ipsum dolor</p>
+                            <input type="number" class="windows__field-value" value="135.89">
+                            <span class="windows__unit">u.m.</span>
+                            <button class="maindata__detail">
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.5 0C3.80166 0 0 3.80199 0 8.5C0 13.1983 3.80199 17 8.5 17C13.1983 17 17 13.198 17 8.5C17 3.80166 13.198 0 8.5 0ZM8.5 15.6719C4.53578 15.6719 1.32812 12.464 1.32812 8.5C1.32812 4.53578 4.53605 1.32812 8.5 1.32812C12.4642 1.32812 15.6719 4.53605 15.6719 8.5C15.6719 12.4642 12.4639 15.6719 8.5 15.6719Z" fill="#DBDBDB"/>
+                                    <path d="M8.5 8C8.13324 8 7.83594 8.25043 7.83594 8.55937V12.1615C7.83594 12.4705 8.13324 12.7209 8.5 12.7209C8.86676 12.7209 9.16406 12.4704 9.16406 12.1615V8.55937C9.16406 8.25043 8.86676 8 8.5 8Z" fill="#DBDBDB"/>
+                                    <path d="M8.5 6.30328C8.99511 6.30328 9.39648 5.90191 9.39648 5.4068C9.39648 4.91168 8.99511 4.51031 8.5 4.51031C8.00489 4.51031 7.60352 4.91168 7.60352 5.4068C7.60352 5.90191 8.00489 6.30328 8.5 6.30328Z" fill="#DBDBDB"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="windows__field">
+                            <p class="windows__fieldname">Lorem, ipsum dolor</p>
+                            <input type="number" class="windows__field-value" value="135.89">
+                            <span class="windows__unit">u.m.</span>
+                            <button class="maindata__detail">
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.5 0C3.80166 0 0 3.80199 0 8.5C0 13.1983 3.80199 17 8.5 17C13.1983 17 17 13.198 17 8.5C17 3.80166 13.198 0 8.5 0ZM8.5 15.6719C4.53578 15.6719 1.32812 12.464 1.32812 8.5C1.32812 4.53578 4.53605 1.32812 8.5 1.32812C12.4642 1.32812 15.6719 4.53605 15.6719 8.5C15.6719 12.4642 12.4639 15.6719 8.5 15.6719Z" fill="#DBDBDB"/>
+                                    <path d="M8.5 8C8.13324 8 7.83594 8.25043 7.83594 8.55937V12.1615C7.83594 12.4705 8.13324 12.7209 8.5 12.7209C8.86676 12.7209 9.16406 12.4704 9.16406 12.1615V8.55937C9.16406 8.25043 8.86676 8 8.5 8Z" fill="#DBDBDB"/>
+                                    <path d="M8.5 6.30328C8.99511 6.30328 9.39648 5.90191 9.39648 5.4068C9.39648 4.91168 8.99511 4.51031 8.5 4.51031C8.00489 4.51031 7.60352 4.91168 7.60352 5.4068C7.60352 5.90191 8.00489 6.30328 8.5 6.30328Z" fill="#DBDBDB"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="windows__field">
+                            <p class="windows__fieldname">Lorem, ipsum dolor</p>
+                            <input type="number" class="windows__field-value" value="135.89">
+                            <span class="windows__unit">u.m.</span>
+                            <button class="maindata__detail">
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.5 0C3.80166 0 0 3.80199 0 8.5C0 13.1983 3.80199 17 8.5 17C13.1983 17 17 13.198 17 8.5C17 3.80166 13.198 0 8.5 0ZM8.5 15.6719C4.53578 15.6719 1.32812 12.464 1.32812 8.5C1.32812 4.53578 4.53605 1.32812 8.5 1.32812C12.4642 1.32812 15.6719 4.53605 15.6719 8.5C15.6719 12.4642 12.4639 15.6719 8.5 15.6719Z" fill="#DBDBDB"/>
+                                    <path d="M8.5 8C8.13324 8 7.83594 8.25043 7.83594 8.55937V12.1615C7.83594 12.4705 8.13324 12.7209 8.5 12.7209C8.86676 12.7209 9.16406 12.4704 9.16406 12.1615V8.55937C9.16406 8.25043 8.86676 8 8.5 8Z" fill="#DBDBDB"/>
+                                    <path d="M8.5 6.30328C8.99511 6.30328 9.39648 5.90191 9.39648 5.4068C9.39648 4.91168 8.99511 4.51031 8.5 4.51031C8.00489 4.51031 7.60352 4.91168 7.60352 5.4068C7.60352 5.90191 8.00489 6.30328 8.5 6.30328Z" fill="#DBDBDB"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="windows__field">
+                            <p class="windows__fieldname">Lorem, ipsum dolor</p>
+                            <input type="number" class="windows__field-value" value="135.89">
+                            <span class="windows__unit">u.m.</span>
+                            <button class="maindata__detail">
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.5 0C3.80166 0 0 3.80199 0 8.5C0 13.1983 3.80199 17 8.5 17C13.1983 17 17 13.198 17 8.5C17 3.80166 13.198 0 8.5 0ZM8.5 15.6719C4.53578 15.6719 1.32812 12.464 1.32812 8.5C1.32812 4.53578 4.53605 1.32812 8.5 1.32812C12.4642 1.32812 15.6719 4.53605 15.6719 8.5C15.6719 12.4642 12.4639 15.6719 8.5 15.6719Z" fill="#DBDBDB"/>
+                                    <path d="M8.5 8C8.13324 8 7.83594 8.25043 7.83594 8.55937V12.1615C7.83594 12.4705 8.13324 12.7209 8.5 12.7209C8.86676 12.7209 9.16406 12.4704 9.16406 12.1615V8.55937C9.16406 8.25043 8.86676 8 8.5 8Z" fill="#DBDBDB"/>
+                                    <path d="M8.5 6.30328C8.99511 6.30328 9.39648 5.90191 9.39648 5.4068C9.39648 4.91168 8.99511 4.51031 8.5 4.51031C8.00489 4.51031 7.60352 4.91168 7.60352 5.4068C7.60352 5.90191 8.00489 6.30328 8.5 6.30328Z" fill="#DBDBDB"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="windows__field">
+                            <p class="windows__fieldname">Lorem, ipsum dolor</p>
+                            <input type="number" class="windows__field-value" value="135.89">
+                            <span class="windows__unit">u.m.</span>
+                            <button class="maindata__detail">
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.5 0C3.80166 0 0 3.80199 0 8.5C0 13.1983 3.80199 17 8.5 17C13.1983 17 17 13.198 17 8.5C17 3.80166 13.198 0 8.5 0ZM8.5 15.6719C4.53578 15.6719 1.32812 12.464 1.32812 8.5C1.32812 4.53578 4.53605 1.32812 8.5 1.32812C12.4642 1.32812 15.6719 4.53605 15.6719 8.5C15.6719 12.4642 12.4639 15.6719 8.5 15.6719Z" fill="#DBDBDB"/>
+                                    <path d="M8.5 8C8.13324 8 7.83594 8.25043 7.83594 8.55937V12.1615C7.83594 12.4705 8.13324 12.7209 8.5 12.7209C8.86676 12.7209 9.16406 12.4704 9.16406 12.1615V8.55937C9.16406 8.25043 8.86676 8 8.5 8Z" fill="#DBDBDB"/>
+                                    <path d="M8.5 6.30328C8.99511 6.30328 9.39648 5.90191 9.39648 5.4068C9.39648 4.91168 8.99511 4.51031 8.5 4.51031C8.00489 4.51031 7.60352 4.91168 7.60352 5.4068C7.60352 5.90191 8.00489 6.30328 8.5 6.30328Z" fill="#DBDBDB"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="windows__field">
+                            <p class="windows__fieldname">Lorem, ipsum dolor</p>
+                            <input type="number" class="windows__field-value" value="135.89">
+                            <span class="windows__unit">u.m.</span>
+                            <button class="maindata__detail">
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.5 0C3.80166 0 0 3.80199 0 8.5C0 13.1983 3.80199 17 8.5 17C13.1983 17 17 13.198 17 8.5C17 3.80166 13.198 0 8.5 0ZM8.5 15.6719C4.53578 15.6719 1.32812 12.464 1.32812 8.5C1.32812 4.53578 4.53605 1.32812 8.5 1.32812C12.4642 1.32812 15.6719 4.53605 15.6719 8.5C15.6719 12.4642 12.4639 15.6719 8.5 15.6719Z" fill="#DBDBDB"/>
+                                    <path d="M8.5 8C8.13324 8 7.83594 8.25043 7.83594 8.55937V12.1615C7.83594 12.4705 8.13324 12.7209 8.5 12.7209C8.86676 12.7209 9.16406 12.4704 9.16406 12.1615V8.55937C9.16406 8.25043 8.86676 8 8.5 8Z" fill="#DBDBDB"/>
+                                    <path d="M8.5 6.30328C8.99511 6.30328 9.39648 5.90191 9.39648 5.4068C9.39648 4.91168 8.99511 4.51031 8.5 4.51031C8.00489 4.51031 7.60352 4.91168 7.60352 5.4068C7.60352 5.90191 8.00489 6.30328 8.5 6.30328Z" fill="#DBDBDB"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="windows__field">
+                            <p class="windows__fieldname">Lorem, ipsum dolor</p>
+                            <input type="number" class="windows__field-value" value="135.89">
+                            <span class="windows__unit">u.m.</span>
+                            <button class="maindata__detail">
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.5 0C3.80166 0 0 3.80199 0 8.5C0 13.1983 3.80199 17 8.5 17C13.1983 17 17 13.198 17 8.5C17 3.80166 13.198 0 8.5 0ZM8.5 15.6719C4.53578 15.6719 1.32812 12.464 1.32812 8.5C1.32812 4.53578 4.53605 1.32812 8.5 1.32812C12.4642 1.32812 15.6719 4.53605 15.6719 8.5C15.6719 12.4642 12.4639 15.6719 8.5 15.6719Z" fill="#DBDBDB"/>
+                                    <path d="M8.5 8C8.13324 8 7.83594 8.25043 7.83594 8.55937V12.1615C7.83594 12.4705 8.13324 12.7209 8.5 12.7209C8.86676 12.7209 9.16406 12.4704 9.16406 12.1615V8.55937C9.16406 8.25043 8.86676 8 8.5 8Z" fill="#DBDBDB"/>
+                                    <path d="M8.5 6.30328C8.99511 6.30328 9.39648 5.90191 9.39648 5.4068C9.39648 4.91168 8.99511 4.51031 8.5 4.51031C8.00489 4.51031 7.60352 4.91168 7.60352 5.4068C7.60352 5.90191 8.00489 6.30328 8.5 6.30328Z" fill="#DBDBDB"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="windows__field">
+                            <p class="windows__fieldname">Lorem, ipsum dolor</p>
+                            <input type="number" class="windows__field-value" value="135.89">
+                            <span class="windows__unit">u.m.</span>
+                            <button class="maindata__detail">
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.5 0C3.80166 0 0 3.80199 0 8.5C0 13.1983 3.80199 17 8.5 17C13.1983 17 17 13.198 17 8.5C17 3.80166 13.198 0 8.5 0ZM8.5 15.6719C4.53578 15.6719 1.32812 12.464 1.32812 8.5C1.32812 4.53578 4.53605 1.32812 8.5 1.32812C12.4642 1.32812 15.6719 4.53605 15.6719 8.5C15.6719 12.4642 12.4639 15.6719 8.5 15.6719Z" fill="#DBDBDB"/>
+                                    <path d="M8.5 8C8.13324 8 7.83594 8.25043 7.83594 8.55937V12.1615C7.83594 12.4705 8.13324 12.7209 8.5 12.7209C8.86676 12.7209 9.16406 12.4704 9.16406 12.1615V8.55937C9.16406 8.25043 8.86676 8 8.5 8Z" fill="#DBDBDB"/>
+                                    <path d="M8.5 6.30328C8.99511 6.30328 9.39648 5.90191 9.39648 5.4068C9.39648 4.91168 8.99511 4.51031 8.5 4.51031C8.00489 4.51031 7.60352 4.91168 7.60352 5.4068C7.60352 5.90191 8.00489 6.30328 8.5 6.30328Z" fill="#DBDBDB"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="windows__field">
+                            <p class="windows__fieldname">Lorem, ipsum dolor</p>
+                            <input type="number" class="windows__field-value" value="135.89">
+                            <span class="windows__unit">u.m.</span>
+                            <button class="maindata__detail">
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.5 0C3.80166 0 0 3.80199 0 8.5C0 13.1983 3.80199 17 8.5 17C13.1983 17 17 13.198 17 8.5C17 3.80166 13.198 0 8.5 0ZM8.5 15.6719C4.53578 15.6719 1.32812 12.464 1.32812 8.5C1.32812 4.53578 4.53605 1.32812 8.5 1.32812C12.4642 1.32812 15.6719 4.53605 15.6719 8.5C15.6719 12.4642 12.4639 15.6719 8.5 15.6719Z" fill="#DBDBDB"/>
+                                    <path d="M8.5 8C8.13324 8 7.83594 8.25043 7.83594 8.55937V12.1615C7.83594 12.4705 8.13324 12.7209 8.5 12.7209C8.86676 12.7209 9.16406 12.4704 9.16406 12.1615V8.55937C9.16406 8.25043 8.86676 8 8.5 8Z" fill="#DBDBDB"/>
+                                    <path d="M8.5 6.30328C8.99511 6.30328 9.39648 5.90191 9.39648 5.4068C9.39648 4.91168 8.99511 4.51031 8.5 4.51031C8.00489 4.51031 7.60352 4.91168 7.60352 5.4068C7.60352 5.90191 8.00489 6.30328 8.5 6.30328Z" fill="#DBDBDB"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="windows__right">
+                        <h3 class="maindata__sidename">Indicators</h3>
+                        <div class="windows__field">
+                            <p class="windows__fieldname">Lorem, ipsum dolor</p>
+                            <input type="number" class="windows__field-value" value="135.89">
+                            <span class="windows__unit">u.m.</span>
+                            <button class="maindata__detail">
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.5 0C3.80166 0 0 3.80199 0 8.5C0 13.1983 3.80199 17 8.5 17C13.1983 17 17 13.198 17 8.5C17 3.80166 13.198 0 8.5 0ZM8.5 15.6719C4.53578 15.6719 1.32812 12.464 1.32812 8.5C1.32812 4.53578 4.53605 1.32812 8.5 1.32812C12.4642 1.32812 15.6719 4.53605 15.6719 8.5C15.6719 12.4642 12.4639 15.6719 8.5 15.6719Z" fill="#DBDBDB"/>
+                                    <path d="M8.5 8C8.13324 8 7.83594 8.25043 7.83594 8.55937V12.1615C7.83594 12.4705 8.13324 12.7209 8.5 12.7209C8.86676 12.7209 9.16406 12.4704 9.16406 12.1615V8.55937C9.16406 8.25043 8.86676 8 8.5 8Z" fill="#DBDBDB"/>
+                                    <path d="M8.5 6.30328C8.99511 6.30328 9.39648 5.90191 9.39648 5.4068C9.39648 4.91168 8.99511 4.51031 8.5 4.51031C8.00489 4.51031 7.60352 4.91168 7.60352 5.4068C7.60352 5.90191 8.00489 6.30328 8.5 6.30328Z" fill="#DBDBDB"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="windows__field">
+                            <p class="windows__fieldname">Lorem, ipsum dolor</p>
+                            <input type="number" class="windows__field-value" value="135.89">
+                            <span class="windows__unit">u.m.</span>
+                            <button class="maindata__detail">
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.5 0C3.80166 0 0 3.80199 0 8.5C0 13.1983 3.80199 17 8.5 17C13.1983 17 17 13.198 17 8.5C17 3.80166 13.198 0 8.5 0ZM8.5 15.6719C4.53578 15.6719 1.32812 12.464 1.32812 8.5C1.32812 4.53578 4.53605 1.32812 8.5 1.32812C12.4642 1.32812 15.6719 4.53605 15.6719 8.5C15.6719 12.4642 12.4639 15.6719 8.5 15.6719Z" fill="#DBDBDB"/>
+                                    <path d="M8.5 8C8.13324 8 7.83594 8.25043 7.83594 8.55937V12.1615C7.83594 12.4705 8.13324 12.7209 8.5 12.7209C8.86676 12.7209 9.16406 12.4704 9.16406 12.1615V8.55937C9.16406 8.25043 8.86676 8 8.5 8Z" fill="#DBDBDB"/>
+                                    <path d="M8.5 6.30328C8.99511 6.30328 9.39648 5.90191 9.39648 5.4068C9.39648 4.91168 8.99511 4.51031 8.5 4.51031C8.00489 4.51031 7.60352 4.91168 7.60352 5.4068C7.60352 5.90191 8.00489 6.30328 8.5 6.30328Z" fill="#DBDBDB"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="windows__field">
+                            <p class="windows__fieldname">Lorem, ipsum dolor</p>
+                            <input type="number" class="windows__field-value" value="135.89">
+                            <span class="windows__unit">u.m.</span>
+                            <button class="maindata__detail">
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.5 0C3.80166 0 0 3.80199 0 8.5C0 13.1983 3.80199 17 8.5 17C13.1983 17 17 13.198 17 8.5C17 3.80166 13.198 0 8.5 0ZM8.5 15.6719C4.53578 15.6719 1.32812 12.464 1.32812 8.5C1.32812 4.53578 4.53605 1.32812 8.5 1.32812C12.4642 1.32812 15.6719 4.53605 15.6719 8.5C15.6719 12.4642 12.4639 15.6719 8.5 15.6719Z" fill="#DBDBDB"/>
+                                    <path d="M8.5 8C8.13324 8 7.83594 8.25043 7.83594 8.55937V12.1615C7.83594 12.4705 8.13324 12.7209 8.5 12.7209C8.86676 12.7209 9.16406 12.4704 9.16406 12.1615V8.55937C9.16406 8.25043 8.86676 8 8.5 8Z" fill="#DBDBDB"/>
+                                    <path d="M8.5 6.30328C8.99511 6.30328 9.39648 5.90191 9.39648 5.4068C9.39648 4.91168 8.99511 4.51031 8.5 4.51031C8.00489 4.51031 7.60352 4.91168 7.60352 5.4068C7.60352 5.90191 8.00489 6.30328 8.5 6.30328Z" fill="#DBDBDB"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="windows__field">
+                            <p class="windows__fieldname">Lorem, ipsum dolor</p>
+                            <input type="number" class="windows__field-value" value="135.89">
+                            <span class="windows__unit">u.m.</span>
+                            <button class="maindata__detail">
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.5 0C3.80166 0 0 3.80199 0 8.5C0 13.1983 3.80199 17 8.5 17C13.1983 17 17 13.198 17 8.5C17 3.80166 13.198 0 8.5 0ZM8.5 15.6719C4.53578 15.6719 1.32812 12.464 1.32812 8.5C1.32812 4.53578 4.53605 1.32812 8.5 1.32812C12.4642 1.32812 15.6719 4.53605 15.6719 8.5C15.6719 12.4642 12.4639 15.6719 8.5 15.6719Z" fill="#DBDBDB"/>
+                                    <path d="M8.5 8C8.13324 8 7.83594 8.25043 7.83594 8.55937V12.1615C7.83594 12.4705 8.13324 12.7209 8.5 12.7209C8.86676 12.7209 9.16406 12.4704 9.16406 12.1615V8.55937C9.16406 8.25043 8.86676 8 8.5 8Z" fill="#DBDBDB"/>
+                                    <path d="M8.5 6.30328C8.99511 6.30328 9.39648 5.90191 9.39648 5.4068C9.39648 4.91168 8.99511 4.51031 8.5 4.51031C8.00489 4.51031 7.60352 4.91168 7.60352 5.4068C7.60352 5.90191 8.00489 6.30328 8.5 6.30328Z" fill="#DBDBDB"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <footer class="maindata__footer">
+                    <button class="button maindata__button">Calculate</button>
+                </footer>
+            </div>
+            <div class="windows__item calcdata">
+                <header class="windows__header">
+                    <h2 class="windows__heading">Calculated data</h2>
+                    <span class="hide"></span>
+                    <div class="close-lg"></div>
+                </header>
+                <div class="windows__data">
+                    <div class="windows__left">
+                        <div class="windows__field windows__field_calcdata">
+                            <p class="windows__fieldname windows__fieldname_calcdata">Lorem, ipsum dolor</p>
+                            <input type="number" class="windows__field-value" value="135.89">
+                            <span class="windows__unit">u.m.</span>
+                        </div>
+                        <div class="windows__field windows__field_calcdata">
+                            <p class="windows__fieldname windows__fieldname_calcdata">Lorem, ipsum dolor</p>
+                            <input type="number" class="windows__field-value" value="135.89">
+                            <span class="windows__unit">u.m.</span>
+                        </div>
+                        <div class="windows__field windows__field_calcdata">
+                            <p class="windows__fieldname windows__fieldname_calcdata">Lorem, ipsum dolor</p>
+                            <input type="number" class="windows__field-value" value="135.89">
+                            <span class="windows__unit">u.m.</span>
+                        </div>
+                    </div>
+                    <div class="windows__right">
+                        <div class="windows__field windows__field_calcdata">
+                            <p class="windows__fieldname windows__fieldname_calcdata">Lorem, ipsum dolor</p>
+                            <input type="number" class="windows__field-value" value="135.89">
+                            <span class="windows__unit">u.m.</span>
+                        </div>
+                        <div class="windows__field windows__field_calcdata">
+                            <p class="windows__fieldname windows__fieldname_calcdata">Lorem, ipsum dolor</p>
+                            <input type="number" class="windows__field-value" value="135.89">
+                            <span class="windows__unit">u.m.</span>
+                        </div>
+                        <div class="windows__field windows__field_calcdata">
+                            <p class="windows__fieldname windows__fieldname_calcdata">Lorem, ipsum dolor</p>
+                            <input type="number" class="windows__field-value" value="135.89">
+                            <span class="windows__unit">u.m.</span>
+                        </div>
+                        <div class="windows__field windows__field_calcdata">
+                            <p class="windows__fieldname windows__fieldname_calcdata">Lorem, ipsum dolor</p>
+                            <input type="number" class="windows__field-value" value="135.89">
+                            <span class="windows__unit">u.m.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="windows__item detaildata">
+                <header class="windows__header">
+                    <h2 class="windows__heading">Detailed analysis of the "population" field</h2>
+                    <span class="hide"></span>
+                    <div class="close-lg"></div>
+                </header>
+                <table class="detaildata__table">
+                    <tr class="detaildata__row">
+                        <td>Year</td>
+                        <td>2015</td>
+                        <td>2016</td>
+                        <td>2017</td>
+                        <td>2018</td>
+                        <td>2019</td>
+                    </tr>
+                    <tr class="detaildata__row">
+                        <td>Population</td>
+                        <td>135.89</td>
+                        <td>189.06</td>
+                        <td>189.06</td>
+                        <td>189.06</td>
+                        <td>189.06</td>
+                    </tr>
+                    <tr class="detaildata__row">
+                        <td>Fieldname</td>
+                        <td>100</td>
+                        <td>99</td>
+                        <td>98</td>
+                        <td>97</td>
+                        <td>96</td>
+                    </tr>
+                </table>
+                <h3 class="detaildata__heading">Graph parameters</h3>
+                <div class="detaildata__parameters">
+                    <div class="detaildata__parameter">
+                        <div class="detaildata__field">
+                            <label for="detaildata__select">Start with:</label>
+                            <select name="region_name" class="windows__select windows__select_detaildata" id="detaildata__select">
+                                <option value="1">2015</option>
+                                <option value="1">2016</option>
+                                <option value="1">2017</option>
+                                <option value="1">2018</option>
+                                <option value="1">2019</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="detaildata__parameter">
+                        <div class="detaildata__field">
+                            <label for="detaildata__forward">Forecast forward:</label>
+                            <input type="number" class="windows__field-value windows__field-value_detaildata" id="detaildata__forward"value="1">
+                        </div>
+                        <div class="detaildata__field">
+                            <label for="detaildata__backward">Forecast back:</label>
+                            <input type="number" class="windows__field-value windows__field-value_detaildata" id="detaildata__backward"value="5">
+                        </div>
+                    </div>
+                    <div class="detaildata__parameter">
+                        <div class="detaildata__field">
+                            <label for="detaildata__data-for-graph">Data for graph:</label>
+                            <select name="region_name" class="windows__select windows__select_detaildata windows__select_data-for-graph" id="detaildata__data-for-graph">
+                                <option value="1">Row 2</option>
+                                <option value="1">Row 3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="windows__data">
+                    <div class="detaildata__tabs">
+                        <div class="detaildata__tab active">Linear</div>
+                        <div class="detaildata__tab">Power</div>
+                        <div class="detaildata__tab">Logarithmic</div>
+                        <div class="detaildata__tab">Exponential</div>
+                        <div class="detaildata__tab">Polygonal</div>
+                    </div>
+                    <button class="button detaildata__button">Build</button>
+                </div>
+                <div class="detaildata__graph">
+                    
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <!-- Lodash Library -->
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
+    <!-- My JavaScript file -->
+    <script src="scripts/main.js"></script>
+</body>
+</html>
